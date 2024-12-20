@@ -1,0 +1,96 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Main Container */
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0f7fa;
+    padding: 20px;
+  }
+  
+  /* Title Container */
+  .title-container {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .title-container h2 {
+    color: #00796b;
+    font-size: 24px;
+  }
+  
+  /* Blogs Container */
+  .blogs-container {
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blogs-container h3 {
+    color: #00796b;
+    margin-bottom: 15px;
+  }
+  
+  .blogs-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .blog-item {
+    background-color: #f1f1f1;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+  }
+  
+  .blog-item h4 {
+    color: #00796b;
+    margin: 0 0 10px 0;
+  }
+  
+  .blog-item p {
+    color: #555;
+  }
+  
+  /* Info Message */
+  .info-message {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  /* Button Container */
+  .button-container {
+    margin-top: 30px;
+  }
+  
+  .input-button {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+    text-align: center;
+  }
+  
+  .input-button:hover {
+    background-color: #004d40;
+  }
+  
