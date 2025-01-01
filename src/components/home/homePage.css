@@ -1,96 +1,223 @@
-/* General Styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f9fc;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Main Container */
-  .home-container {
+/* Main container */
+.home-container {
+    padding: 40px;
+    background: linear-gradient(135deg, #f0f4f8, #d9e1e8);
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Title and Section headers */
+h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+/* Recent Blogs Section (Carousel) */
+.recent-blogs-section {
+    margin-bottom: 50px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel {
+    display: flex;
+    gap: 15px;
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    padding: 10px 0;
+}
+
+.carousel-item {
+    flex: 0 0 336px; /* 280px * 1.2 = 336px (20% larger) */
+    padding: 20px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.8;
+    transform: scale(0.95);
+}
+
+.carousel-item.active {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.blog-card {
+    flex-grow: 1; /* Ensure blog card fills the space of the carousel item */
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100vh;
-    background-color: #e0f7fa;
-    padding: 20px;
-  }
-  
-  /* Title Container */
-  .title-container {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .title-container h2 {
-    color: #00796b;
-    font-size: 24px;
-  }
-  
-  /* Blogs Container */
-  .blogs-container {
-    margin-bottom: 30px;
-    width: 100%;
-    max-width: 600px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .blogs-container h3 {
-    color: #00796b;
-    margin-bottom: 15px;
-  }
-  
-  .blogs-container ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .blog-item {
-    background-color: #f1f1f1;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-  }
-  
-  .blog-item h4 {
-    color: #00796b;
-    margin: 0 0 10px 0;
-  }
-  
-  .blog-item p {
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+.blog-card h4 {
+    font-size: 1.25rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.blog-card p {
+    font-size: 1rem;
     color: #555;
-  }
-  
-  /* Info Message */
-  .info-message {
-    font-size: 16px;
-    color: #555;
-    text-align: center;
-    margin-top: 30px;
-  }
-  
-  /* Button Container */
-  .button-container {
-    margin-top: 30px;
-  }
-  
-  .input-button {
-    background-color: #00796b;
+    line-height: 1.6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Read More Button */
+.read-more-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #6a11cb;
     color: white;
     border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    border-radius: 5px;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
     cursor: pointer;
-    width: 150px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.read-more-btn:hover {
+    background-color: #5508a2;
+    transform: scale(1.05);
+}
+
+/* Carousel Arrows */
+.carousel-arrow {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-arrow.left {
+    left: 20px;
+}
+
+.carousel-arrow.right {
+    right: 20px;
+}
+
+/* All Blogs Section */
+.all-blogs-section {
+    margin-top: 60px;
+}
+
+.blogs-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.blog-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
     text-align: center;
-  }
-  
-  .input-button:hover {
-    background-color: #004d40;
-  }
-  
+    font-size: 1rem;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #6a11cb;
+}
+
+/* Responsive Styling */
+@media (max-width: 900px) {
+    .home-container {
+        padding: 20px;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    .carousel-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .carousel {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .blog-card {
+        padding: 15px;
+        height: auto;
+    }
+
+    .blogs-list {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+
+    .input-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}

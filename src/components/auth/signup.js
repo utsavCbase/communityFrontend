@@ -4,6 +4,7 @@ import axios from 'axios';
 import { API_BASE_URL } from '../../config';
 import Header from '../header/header';
 import './signup.css'; // Import the CSS file
+import Footer from '../footer/footer';
 
 const Signup = () => {
   const [username, setUsername] = useState('');
@@ -86,6 +87,9 @@ const Signup = () => {
 
         <button type="submit" className="signup-btn">Signup</button>
       </form>
+    </div>
+    <div>
+        <Footer/>
     </div>
     </div>
   );

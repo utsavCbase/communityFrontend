@@ -4,81 +4,101 @@ body {
     background-color: #f7f9fc;
     margin: 0;
     padding: 0;
-  }
-  
-  /* Login Container */
-  .login-container {
+}
+
+/* Login Container */
+.login-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #e0f7fa;
-  }
-  
-  /* Login Form */
-  .login-form {
+    min-height: calc(80vh - 120px); /* Adjusted for header */
+    background-color: #f0f4f8;
+    padding: 20px;
+}
+
+/* Login Form */
+.login-form {
     background-color: white;
-    padding: 30px;
+    padding: 40px; /* Increased padding for more space */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 450px; /* Increased max-width for a wider form */
+    min-height: 350px; /* Set a minimum height for the form */
     text-align: center;
-  }
-  
-  /* Heading */
-  .login-form h2 {
-    color: #00796b;
-    margin-bottom: 20px;
-  }
-  
-  /* Form Group */
-  .form-group {
+    border: 2px solid #00796b;
+}
+
+/* Heading */
+.login-form h2 {
+    color: #ff6a00; /* Matches the gradient theme */
+    margin-bottom: 30px;
+    font-size: 28px; /* Increased font size */
+    font-weight: bold;
+}
+
+/* Form Group */
+.form-group {
     margin-bottom: 20px;
     text-align: left;
-  }
-  
-  .form-group label {
+}
+
+.form-group label {
     display: block;
-    color: #00796b;
+    color: #333;
     font-weight: bold;
     margin-bottom: 5px;
-  }
-  
-  .form-group input {
+}
+
+.form-group input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #00796b;
+    padding: 12px; /* Increased padding for more space in the input fields */
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
     outline: none;
     box-sizing: border-box;
-  }
-  
-  .form-group input:focus {
-    border-color: #004d40;
-  }
-  
-  /* Error Message */
-  .error {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #ff6a00;
+    box-shadow: 0 0 5px rgba(255, 106, 0, 0.4);
+}
+
+/* Error Message */
+.error {
     color: red;
     font-size: 14px;
     margin-bottom: 20px;
-  }
-  
-  /* Submit Button */
-  .login-btn {
-    background-color: #00796b;
+    text-align: left;
+}
+
+/* Submit Button */
+.login-btn {
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
     color: white;
     border: none;
-    padding: 12px 20px;
-    font-size: 16px;
+    padding: 14px 20px; /* Increased padding for a more prominent button */
+    font-size: 18px; /* Slightly larger font size */
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
-  }
-  
-  .login-btn:hover {
-    background-color: #004d40;
-  }
-  
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.login-btn:hover {
+    background: linear-gradient(45deg, #ee0979, #ff6a00);
+    transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 10px;
+    }
+
+    .login-form {
+        padding: 25px;
+    }
+}

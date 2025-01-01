@@ -1,0 +1,146 @@
+/* notification.css */
+
+/* Main Container */
+.notification-container {
+    background-color: #f7f9fc;
+    font-family: 'Arial', sans-serif;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(100vh - 120px); /* Adjusted for header and footer */
+}
+
+/* Heading */
+.notification-container h2 {
+    font-size: 28px;
+    color: #6a11cb; /* Matches header gradient color */
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Notification List */
+.notification-list {
+    width: 80%;
+    max-width: 900px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.notification-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.notification-item.read {
+    background-color: #e8e8e8;
+    color: #888;
+}
+
+.notification-item.unread {
+    background-color: #fffbf0;
+    color: #333;
+}
+
+.notification-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Notification Message */
+.notification-message {
+    font-size: 16px;
+    font-weight: normal;
+    color: #333;
+}
+
+/* Notification Time */
+.notification-time {
+    font-size: 14px;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* Empty Message */
+.notification-container p {
+    color: #ff6a00;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Login Info Section */
+.login-info-section {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.login-info-section h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.login-info-section p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.login-button {
+    background-color: #6a11cb;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #5508a2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .notification-container {
+        padding: 20px 10px;
+    }
+
+    .notification-container h2 {
+        font-size: 24px;
+    }
+
+    .notification-list {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .login-info-section {
+        padding: 20px;
+    }
+
+    .login-info-section h3 {
+        font-size: 20px;
+    }
+
+    .login-info-section p {
+        font-size: 14px;
+    }
+
+    .login-button {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}
